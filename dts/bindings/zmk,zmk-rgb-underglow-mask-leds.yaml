@@ -1,0 +1,11 @@
+description: RGB underglow extension to mask LEDs in the strip
+
+compatible: "zmk,zmk-rgb-underglow-mask-leds"
+
+properties:
+  led_mask:
+    type: array
+    required: true
+    description: |
+      List of LED indices to mask out (write 0,0,0 value).
+      Example: <0 7 14> turns the LEDs at index 0, 7 and 14 off.

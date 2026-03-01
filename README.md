@@ -1,11 +1,17 @@
-# ZMK Module Template
+# zmk-rgb-underglow-mask-leds
 
-This repository contains a template for a ZMK module, as it would most frequently be used. 
+ZMK module that allows to use the new `zmk_rgb_underglow_update_hook` to mask RGB LEDs in the underglow strip.
 
-## Usage
+## Example
+Specify a node with `zmk,zmk-rgb-underglow-mask-leds` compatible string:
 
-Read through the [ZMK Module Creation](https://zmk.dev/docs/development/module-creation) page for details on how to configure this template.
+```dts
+/ {
+    masked {
+        compatible = "zmk,zmk-rgb-underglow-mask-leds";
+        // turn off LEDs at index 1, 8, 12
+        led_mask = <1 8 12>;
+    };
+};
+```
 
-## More Info
-
-For more info on modules, you can read through  through the [Zephyr modules page](https://docs.zephyrproject.org/3.5.0/develop/modules.html) and [ZMK's page on using modules](https://zmk.dev/docs/features/modules). [Zephyr's west manifest page](https://docs.zephyrproject.org/3.5.0/develop/west/manifest.html#west-manifests) may also be of use.
